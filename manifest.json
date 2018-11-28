@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Backlog wiki freshness checker",
+  "version": "0.0.1",
+  "description": "Backlogのwikiページの最終更新日から1年以上経過しているかチェック",
+  "permissions": [
+    "https://*.backlog.jp/wiki/*",
+    "https://*.backlog.com/wiki/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.backlog.jp/wiki/*",
+        "https://*.backlog.com/wiki/*"],
+      "js": ["checker.js"]
+    }
+  ]
+}
