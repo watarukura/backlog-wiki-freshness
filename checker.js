@@ -1,7 +1,7 @@
 const history = document.querySelectorAll(".user-history__account");
 
 // "xxxによって 2018/10/24 15:53:49 に最終更新されました。"
-const last_update_text = history[1].innerText.trim()
+const last_update_text = history[1].innerText.trim();
 const last_update_date = last_update_text.split(" ")[1];
 const last_update_time = last_update_text.split(" ")[2];
 const last_update = last_update_date + " " + last_update_time;
