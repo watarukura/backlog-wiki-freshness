@@ -15,8 +15,22 @@ const last_update_dt = new Date(last_update);
 
 let one_year_ago = new Date();
 one_year_ago.setFullYear(one_year_ago.getFullYear() - 1);
+let two_year_ago = new Date();
+two_year_ago.setFullYear(two_year_ago.getFullYear() - 2);
+let three_year_ago = new Date();
+three_year_ago.setFullYear(three_year_ago.getFullYear() - 3);
 
-if (last_update_dt < one_year_ago) {
-    const title = document.querySelector("#mainTitle");
-    title.insertAdjacentHTML('afterend','<h4>最終更新日から1年以上経過しています！</h4>');
+const title = document.querySelector("#mainTitle");
+let year = 0;
+if (last_update_dt < three_year_ago) {
+    year = 3;
+} else if (last_update_dt < two_year_ago) {
+    year = 2;
+} else if (last_update_dt < one_year_ago) {
+    year = 1;
+}
+
+if (year > 0) {
+    const message = `<h4><img src="https://assets.backlog.jp/backlog-mail/images/emoticons/warning.png" width="20" height="20" class="new_emoticon">最終更新日から${year}年以上経過しています！</h4>`;
+    title.insertAdjacentHTML('afterend',message);
 }
