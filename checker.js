@@ -1,4 +1,4 @@
-const history = document.querySelectorAll(".user-history__account");
+const history = document.querySelectorAll(".user-history__account span");
 
 let last_update_text = "";
 if (history[1] === undefined) {
